@@ -25,19 +25,19 @@ Transform raw AI conversation exports into:
 ```markdown
 ---
 date: 2026-01-16
-topic: Music Production Workflow
-domains: ["loopwalker"]
-tags: ["music", "production", "workflow"]
+topic: Project Planning Discussion
+domains: ["work"]
+tags: ["planning", "strategy", "workflow"]
 ---
 
-# Music Production Workflow
+# Project Planning Discussion
 
 ## Summary
 Conversation about creating a systematic workflow...
 
 ## Key Outputs
-- 5-stage workflow defined
-- Quality checkpoints established
+- 3-stage process defined
+- Action items established
 ```
 
 ---
@@ -69,6 +69,19 @@ Conversation about creating a systematic workflow...
 **Where to Place:**
 ```bash
 ~/RAW-AI-CHAT-IMPORT/CHAT GPT Archive/conversations.json
+```
+
+### ✅ Grok (xAI)
+
+**How to Export:**
+1. Go to [grok.x.ai](https://grok.x.ai)
+2. Click **Settings** → **Export**
+3. Select conversations to export
+4. Download JSON file
+
+**Where to Place:**
+```bash
+~/RAW-AI-CHAT-IMPORT/grok/conversations.json
 ```
 
 ### ❌ Not Currently Supported
@@ -171,8 +184,8 @@ python3 bin/import-chats.py --sample --count 5
 Archive location: /Users/you/AI-CHAT-ARCHIVE
 
 Processing Claude exports...
-  [1/5] Music Production -> 2026/01-January/2026-01-16-music-production.md
-  [2/5] Brand Strategy -> 2026/01-January/2026-01-16-brand-strategy.md
+  [1/5] Project Planning -> 2026/01-January/2026-01-16-project-planning.md
+  [2/5] Code Review -> 2026/01-January/2026-01-16-code-review.md
 
 ============================================================
 Import complete!
@@ -185,7 +198,7 @@ Import complete!
 
 ```bash
 # Review results
-cat ~/AI-CHAT-ARCHIVE/2026/01-January/2026-01-16-music-production.md
+cat ~/AI-CHAT-ARCHIVE/2026/01-January/2026-01-16-project-planning.md
 
 # Import everything
 python3 bin/import-chats.py --source all
@@ -202,12 +215,12 @@ grep -r "positioning" ~/AI-CHAT-ARCHIVE/
 
 ### By Domain
 ```bash
-grep -r "domains.*loopwalker" ~/AI-CHAT-ARCHIVE/
+grep -r "domains.*work" ~/AI-CHAT-ARCHIVE/
 ```
 
 ### By Tag
 ```bash
-grep -r "tags.*brand" ~/AI-CHAT-ARCHIVE/
+grep -r "tags.*planning" ~/AI-CHAT-ARCHIVE/
 ```
 
 ### With Claude Code Skills
@@ -219,10 +232,10 @@ If using [Claude Code](https://code.anthropic.com):
 ./bin/install-skills.sh
 
 # Archive current session
-/archive topic domain tags
+/archive project-work work planning,strategy
 
 # Search archives
-/archive-query @domain keyword
+/archive-query @work keyword
 ```
 
 ---
@@ -238,6 +251,7 @@ archive:
 import_sources:
   claude: ~/RAW-AI-CHAT-IMPORT/claude export/conversations.json
   chatgpt: ~/RAW-AI-CHAT-IMPORT/CHAT GPT Archive/conversations.json
+  grok: ~/RAW-AI-CHAT-IMPORT/grok/conversations.json
 
 human_os:
   enabled: false                    # Optional integration
@@ -245,9 +259,14 @@ human_os:
 domains:
   default: system
   custom:
-    "@mydomain":
-      - keyword1
-      - keyword2
+    "@work":
+      - project
+      - planning
+      - meeting
+    "@learning":
+      - tutorial
+      - course
+      - study
 ```
 
 See [CONFIGURATION.md](https://github.com/brentolmate/ai-chat-archive/blob/main/CONFIGURATION.md) for all options.
@@ -268,7 +287,7 @@ See [CONFIGURATION.md](https://github.com/brentolmate/ai-chat-archive/blob/main/
 ├── 2025/
 └── 2026/
     └── 01-January/
-        └── 2026-01-16-music-production.md
+        └── 2026-01-16-project-planning.md
 ```
 
 ### File Format
@@ -278,13 +297,13 @@ Each archived conversation includes:
 ```markdown
 ---
 date: 2026-01-16
-topic: Music Production Workflow
-domains: ["loopwalker"]
-tags: ["music", "production", "workflow"]
+topic: Project Planning Discussion
+domains: ["work"]
+tags: ["planning", "strategy", "workflow"]
 ai: claude
 ---
 
-# Music Production Workflow
+# Project Planning Discussion
 
 **Date:** 2026-01-16
 **Source:** Claude
@@ -305,9 +324,9 @@ ai: claude
 | Field | Source | Example |
 |-------|--------|---------|
 | **Date** | Export timestamp | `2026-01-16` |
-| **Title** | Export name | `"Music Production Workflow"` |
-| **Domain** | Auto-detected | `@loopwalker` |
-| **Tags** | Keywords + domain | `["music", "production"]` |
+| **Title** | Export name | `"Project Planning Discussion"` |
+| **Domain** | Auto-detected | `@work` |
+| **Tags** | Keywords + domain | `["planning", "strategy"]` |
 | **Summary** | Generated | 2-3 sentences |
 | **Key Outputs** | Extracted | Bullet points |
 | **Transcript** | Full export | All messages |
@@ -323,14 +342,21 @@ Edit `config/config.yaml`:
 ```yaml
 domains:
   custom:
-    "@writing":
-      - blog
-      - article
-      - essay
+    "@work":
+      - project
+      - planning
+      - meeting
+      - deadline
+    "@learning":
+      - tutorial
+      - course
+      - study
+      - documentation
     "@development":
       - python
       - javascript
       - api
+      - debug
 ```
 
 See [docs/CUSTOM_DOMAINS.md](https://github.com/brentolmate/ai-chat-archive/blob/main/docs/CUSTOM_DOMAINS.md)
