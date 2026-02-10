@@ -106,9 +106,10 @@ cd ai-chat-archive
 # 2. Run setup wizard
 python3 bin/setup-config.py
 
-# 3. Place your exports
+# 3. Place your exports (see below for each platform)
 #    Claude: ~/RAW-AI-CHAT-IMPORT/claude export/conversations.json
 #    ChatGPT: ~/RAW-AI-CHAT-IMPORT/CHAT GPT Archive/conversations.json
+#    Grok: ~/RAW-AI-CHAT-IMPORT/grok/conversations.json
 
 # 4. Test with sample
 python3 bin/import-chats.py --sample --count 5
