@@ -1,0 +1,11 @@
+# AI Chat Archive - Python Dependencies
+
+# Required for configuration
+pyyaml>=6.0
+
+# Optional: For Claude API summaries
+anthropic>=0.18.0
+
+# Optional: For testing
+pytest>=7.0.0
+pytest-cov>=4.0.0

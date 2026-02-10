@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Website Development Planning",
+    "create_time": 1642357200.0,
+    "mapping": {
+      "root": {
+        "message": {
+          "author": {"role": "system"},
+          "content": {
+            "content_type": "text",
+            "parts": ["You are a helpful assistant."]
+          }
+        }
+      },
+      "node1": {
+        "message": {
+          "author": {"role": "user"},
+          "content": {
+            "content_type": "text",
+            "parts": ["I need to plan a website for my music brand"]
+          }
+        }
+      },
+      "node2": {
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {
+            "content_type": "text",
+            "parts": ["I'll help you plan a music brand website. We should focus on showcasing your music, telling your story, and providing contact information for bookings."]
+          }
+        }
+      }
+    }
+  },
+  {
+    "title": "Lyrics Writing Session",
+    "create_time": 1642357300.0,
+    "mapping": {
+      "root": {
+        "message": {
+          "author": {"role": "system"},
+          "content": {
+            "content_type": "text",
+            "parts": ["You are a helpful assistant."]
+          }
+        }
+      },
+      "node1": {
+        "message": {
+          "author": {"role": "user"},
+          "content": {
+            "content_type": "text",
+            "parts": ["Help me write lyrics about shadow work"]
+          }
+        }
+      },
+      "node2": {
+        "message": {
+          "author": {"role": "assistant"},
+          "content": {
+            "content_type": "text",
+            "parts": ["Here's a verse exploring shadow integration: 'Walking through the darkness, finding light within the pain, every shadow that I meet, teaches me to rise again'"]
+          }
+        }
+      }
+    }
+  }
+]

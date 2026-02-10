@@ -1,0 +1,101 @@
+# AI Chat Archive Configuration
+# Copy this file to config.yaml and customize for your setup
+
+# Archive location
+archive:
+  # Path to the archive directory (supports ~ for home directory)
+  path: ~/AI-CHAT-ARCHIVE
+
+# Import source locations
+import_sources:
+  claude: ~/RAW-AI-CHAT-IMPORT/claude export/conversations.json
+  chatgpt: ~/RAW-AI-CHAT-IMPORT/CHAT GPT Archive/conversations.json
+
+# Human OS integration (optional)
+human_os:
+  # Enable to read Sprint.md and domain INDEX files for intelligent tagging
+  enabled: true
+  path: ~/Human
+  # Domains to load from Human OS (leave empty to load all available)
+  domains:
+    - brent
+    - gal
+    - loopwalker
+    - pulsekeeper
+    - shadow-institute
+    - unlimited-band
+
+# Domain keyword mapping for auto-detection
+# Keywords are case-insensitive
+domains:
+  default: system
+  custom:
+    loopwalker:
+      - music
+      - song
+      - loopwalker
+      - shadow work
+      - frequency
+      - audio
+      - lyrics
+      - melody
+      - hip-hop
+      - trap
+    pulsekeeper:
+      - heart
+      - coherence
+      - adhd
+      - 2e
+      - frequency
+      - nervous system
+      - regulation
+      - heart rate variability
+    shadow-institute:
+      - dyslexia
+      - twice-exceptional
+      - 2e
+      - gifted
+      - neurodivergent
+      - learning difference
+      - education
+    unlimited-band:
+      - band
+      - collaboration
+      - music group
+      - bandmate
+    brent:
+      - hyperfocus
+      - dyslexia
+      - pattern recognition
+      - brand
+      - positioning
+      - website
+      - founder
+    gal:
+      - connection
+      - outreach
+      - networking
+      - crm
+      - warm
+      - dm
+      - comment
+      - instagram
+    system:
+      - sprint
+      - workflow
+      - process
+      - system
+      - automation
+      - skill
+      - template
+
+# Anthropic Claude API (optional, for better summaries)
+anthropic:
+  # Environment variable name for API key
+  api_key_env: ANTHROPIC_API_KEY
+  # Model to use for generating summaries and key outputs
+  model: claude-3-haiku-20240307
+  # Maximum tokens for summary generation
+  max_tokens_summary: 200
+  # Maximum tokens for key outputs extraction
+  max_tokens_outputs: 300

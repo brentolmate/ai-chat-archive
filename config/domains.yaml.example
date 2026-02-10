@@ -1,0 +1,45 @@
+# Custom Domain Definitions Example
+# Use this to define your own domains and keywords
+
+# Example: Music production domain
+music-production:
+  keywords:
+    - beat
+    - production
+    - mixing
+    - mastering
+    - daw
+    - ableton
+    - logic pro
+    - fl studio
+
+# Example: Writing domain
+writing:
+  keywords:
+    - blog
+    - article
+    - essay
+    - copy
+    - content writing
+    - editing
+
+# Example: Development domain
+development:
+  keywords:
+    - programming
+    - software
+    - app
+    - web dev
+    - frontend
+    - backend
+    - database
+
+# Example: Health domain
+health:
+  keywords:
+    - fitness
+    - workout
+    - nutrition
+    - meditation
+    - sleep
+    - wellness

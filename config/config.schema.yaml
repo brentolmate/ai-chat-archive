@@ -1,0 +1,76 @@
+# JSON Schema for AI Chat Archive Configuration
+# Use this to validate config.yaml with tools like yamllint
+
+$schema: http://json-schema.org/draft-07/schema#
+title: AI Chat Archive Configuration
+type: object
+required:
+  - archive
+  - domains
+
+properties:
+  archive:
+    type: object
+    required:
+      - path
+    properties:
+      path:
+        type: string
+        description: Path to the archive directory (supports ~ expansion)
+
+  import_sources:
+    type: object
+    properties:
+      claude:
+        type: string
+        description: Path to Claude conversations.json export
+      chatgpt:
+        type: string
+        description: Path to ChatGPT conversations.json export
+
+  human_os:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        description: Whether to enable Human OS integration
+      path:
+        type: string
+        description: Path to Human OS root directory
+      domains:
+        type: array
+        items:
+          type: string
+        description: List of domains to load from Human OS
+
+  domains:
+    type: object
+    required:
+      - default
+    properties:
+      default:
+        type: string
+        description: Default domain when no match is found
+      custom:
+        type: object
+        description: Custom domain keyword mappings
+        additionalProperties:
+          type: array
+          items:
+            type: string
+
+  anthropic:
+    type: object
+    properties:
+      api_key_env:
+        type: string
+        description: Environment variable name for API key
+      model:
+        type: string
+        description: Claude model to use
+      max_tokens_summary:
+        type: integer
+        description: Max tokens for summary generation
+      max_tokens_outputs:
+        type: integer
+        description: Max tokens for key outputs extraction

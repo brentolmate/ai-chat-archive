@@ -1,0 +1,68 @@
+# User configuration
+config/config.yaml
+
+# Archive contents (user's personal conversations)
+archive/
+2024/
+2025/
+2026/
+2027/
+2028/
+INDEX.md
+README-ORIGINAL.md
+.index/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Test coverage
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Import sources (user's raw exports - optional)
+RAW-AI-CHAT-IMPORT/
